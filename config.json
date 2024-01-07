@@ -1,0 +1,4 @@
+{
+	"UploadDir": "./upload-dir",
+	"DbPath": "./ftp_metadata.db"
+}
