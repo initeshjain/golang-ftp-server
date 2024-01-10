@@ -56,7 +56,16 @@ func HandleUpload(c *gin.Context) {
 	}
 
 	logger.Println("File uploaded successfully -", file.Filename)
-	c.JSON(200, gin.H{"message": "File uploaded successfully"})
+
+	var response models.UploadResponse
+
+	response.Url = "/" + file.Filename
+	response.Pathname = file.Filename
+	response.ContentType = "file"
+	response.ContentDisposition = ""
+	response.Message = "File uploaded successfully"
+
+	c.JSON(200, response)
 }
 
 func HandleGet(c *gin.Context) {
@@ -112,5 +121,9 @@ func HandleDelete(c *gin.Context) {
 	}
 
 	logger.Println("File deleted successfully -", filename)
-	c.JSON(200, gin.H{"message": "File deleted successfully"})
+
+	var response models.DeleteResponse
+	response.Message = "File deleted successfully"
+
+	c.JSON(200, response)
 }
