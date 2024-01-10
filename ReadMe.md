@@ -52,13 +52,13 @@ curl -X POST -F "file=@<file_path>/example.txt" http://localhost:8080/upload
 ### Get File
 To retrieve a file, use the below endpoint in your browser run below command. Replace `<filename>` with the name of the file you want to retrieve.
 ```bash
-GET http://localhost:8080/get/<filename>
+curl -X GET http://localhost:8080/get/<filename> -o <filename>
 ```
 
 ### Delete File
 To delete a file, use the following endpoint in your browser or any HTTP client. Replace `<filename>` with the name of the file you want to delete.
 ```bash
-DELETE http://localhost:8080/delete/<filename>
+curl -X DELETE http://localhost:8080/delete/<filename>
 ```
 
 ## Notes
